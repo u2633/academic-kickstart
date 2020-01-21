@@ -10,12 +10,12 @@ authors:
 superuser: true
 
 # Role/position
-role: Wep/App/DevOps Software Engineer
+role: Software Engineer
 
 # Organizations/Affiliations
 organizations:
-- name: H2U CLUB
-  url: "https://h2uclub.com/"
+- name:
+  url: ""
 
 # Short bio (displayed in user profile at end of posts)
 bio: I like new technology.
