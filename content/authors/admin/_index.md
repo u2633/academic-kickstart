@@ -26,7 +26,7 @@ interests:
 education:
   courses:
   - course: Information Technology
-    institution: China University of Technology and Science
+    institution: China University of Science and Technology
     year: 2012
 
 # Social/Academic Networking
