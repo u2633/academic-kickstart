@@ -19,7 +19,7 @@ date_format = "Jan 2006"
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
   title = "Sr. Software Engineer"
-  company = "Healthera Corp."
+  company = "Healthera Corporation"
   company_url = "https://h2uclub.com/"
   location = "Taiwan"
   date_start = "2018-08-01"
@@ -29,9 +29,66 @@ date_format = "Jan 2006"
 
   * Full-Stack Development
   * Mobile App Development
+  * Destop App Development
   * DevOps
-  * Deploying
   """
+
+[[experience]]
+  title = "Sr. Software Engineer"
+  company = "Wistron Information Technology & Services Corporation"
+  company_url = "https://www.wistronits.com/EN/index.html"
+  location = "Taiwan"
+  date_start = "2015-09-01"
+  date_end = "2018-07-31"
+  description = """
+  Responsibilities include:
+
+  * Frontend Development
+  * DevOps
+  """
+
+[[experience]]
+  title = "Sr. Software Engineer"
+  company = "Jorjin Technologies Inc."
+  company_url = "https://www.jorjin.com/company/"
+  location = "Taiwan"
+  date_start = "2015-05-01"
+  date_end = "2015-08-31"
+  description = """
+  Responsibilities include:
+
+  * Wireless Module Porting
+  * Android Demo App Development
+  """
+
+[[experience]]
+  title = "BIOS Engineer"
+  company = "Insyde Software"
+  company_url = "https://www.insyde.com/"
+  location = "Taiwan"
+  date_start = "2012-06-01"
+  date_end = "2014-09-30"
+  description = """
+  Responsibilities include:
+
+  * Build Tools Development and Maintenance
+  * BIOS Issue Analysis
+  * Customer Support
+  """
+
+[[experience]]
+  title = "Assistant Quality Testing Engineer"
+  company = "Wistron Corporation, LTD"
+  company_url = "https://www.wistron.com/CMS/ChangeLanguage/3"
+  location = "Taiwan"
+  date_start = "2009-09-01"
+  date_end = "2012-02-28"
+  description = """
+  Responsibilities include:
+
+  * Hardware/BIOS/Driver/System Integration Test
+  """
+
 
 #[[experience]]
 #  title = "Professor"
