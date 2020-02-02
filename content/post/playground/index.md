@@ -1,16 +1,16 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "Two"
+title: "Playground"
 subtitle: ""
 summary: ""
 authors: []
 tags: []
 categories: []
-date: 2020-02-02T14:13:15+08:00
-lastmod: 2020-02-02T14:13:15+08:00
+date: 2020-02-02T22:56:17+08:00
+lastmod: 2020-02-02T22:56:17+08:00
 featured: false
-draft: false
+draft: true
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
@@ -27,5 +27,3 @@ image:
 #   Otherwise, set `projects = []`.
 projects: []
 ---
-
-## This is a test
