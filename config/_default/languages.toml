@@ -15,7 +15,27 @@
 [zh-hant.params]
   date_format = "2006年1月2日"
 #    description = "Site description in Chinese..."
-#  [[zh.menu.main]]
-#    name = "Wo"
-#    url = "#about"
-#    weight = 1
+[[zh-hant.menu.main]]
+  name = "關於我"
+  url = "#about"
+  weight = 10
+
+[[zh-hant.menu.main]]
+  name = "文章"
+  url = "#posts"
+  weight = 20
+
+[[zh-hant.menu.main]]
+  name = "專案"
+  url = "#projects"
+  weight = 30
+
+# [[main]]
+#   name = "Publications"
+#   url = "#featured"
+#   weight = 40
+
+[[zh-hant.menu.main]]
+  name = "聯絡我"
+  url = "#contact"
+  weight = 60
