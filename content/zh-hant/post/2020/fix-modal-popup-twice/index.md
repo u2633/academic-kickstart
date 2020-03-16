@@ -1,10 +1,10 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "如何解決Flutter Bottom Modal彈跳兩次的問題"
+title: "解決Flutter Bottom Modal彈跳兩次的問題"
 subtitle: ""
-summary: ""
-authors: []
+summary: "紀錄我是如何解決 Flutter Bottom Modal的問題"
+authors: [zane]
 tags: [bug fix]
 categories: [flutter]
 date: 2020-03-12T19:58:18+08:00

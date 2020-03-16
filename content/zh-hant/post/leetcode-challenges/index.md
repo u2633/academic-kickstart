@@ -1,10 +1,10 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "My Leetcode Challenges"
+title: "我的 Leetcode 挑戰"
 subtitle: ""
-summary: ""
-authors: [Zane]
+summary: "我在 Leetcode 上刷題的解答"
+authors: [zane]
 tags: [algorithm]
 categories: [python]
 date: 2020-03-10T17:20:29+08:00

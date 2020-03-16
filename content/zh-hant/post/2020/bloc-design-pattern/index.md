@@ -1,9 +1,9 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "BLoC Design Pattern"
+title: "什麼是BLoC Design Pattern"
 subtitle: ""
-summary: ""
+summary: "在 Flutter 導入 Business Logic Component Pattern 的學習筆記"
 authors: [Zane]
 tags: [pattern]
 categories: [flutter]

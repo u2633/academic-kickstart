@@ -1,9 +1,9 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "讓你的AWS S3擁有自己的網域名稱還具有免費網路憑證"
+title: "讓你的 AWS S3 擁有自己的網域名稱還具有免費網路憑證"
 subtitle: ""
-summary: ""
+summary: "利用 AWS 服務打造 HTTPS 協定的靜態網站"
 authors: [zane]
 tags: [aws]
 categories: [cloud]
