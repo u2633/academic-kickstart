@@ -1,9 +1,9 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "將網域名稱指向Github Page"
+title: "為你的 Github Page 設定個人網域名稱"
 subtitle: ""
-summary: "設定Godday將域名指向個人的Github Page，並利用Cloudflare獲取免費網路憑證"
+summary: "利用 Godaddy 與 Cloudflare 為自己的 Github Page 設定個人域名"
 authors: [zane]
 tags: [domain name]
 categories: [cloud]
