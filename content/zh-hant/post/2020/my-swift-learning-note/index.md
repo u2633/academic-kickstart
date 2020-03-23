@@ -326,4 +326,351 @@ for (k, v) in d2 {
 }
 ```
 
-學習中…🤓
+## 流程控制
+
+### For-In
+
+For-In 可以忽略迭代的值
+
+```swift
+for _ in 1...5 {
+  print("hi")
+}
+```
+
+### While
+
+與其他語言相似，差別只在 Swift 中的條件式都只能接受布林值(Bool)，也就是 True/False，
+不然會報錯。
+
+```swift
+let condition = true
+while condition {
+  print("Hello")
+}
+```
+
+### Repeat-While
+
+有些語言叫`do...while`，但其目的都一樣，一定會執行一次程式區段。
+
+```swift
+let condition = true
+repeat {
+  print("Hello")
+} while condition
+```
+
+### If
+
+其判斷式也僅接受布林值(Bool)
+
+```swift
+let condition = true
+if condition {
+  print("Hello")
+}
+```
+
+### Switch
+
+Switch 判斷式讓我覺得很彈性變得更大且運用得當的話，反而能讓程式碼更簡潔。
+
+基本語法會自動跳離(`break`)執行成立的區段
+
+```swift
+let c = "z"
+switch c {
+  case "a":
+    print("a")
+  case "z":
+    print("z")
+  default:
+    print("unknown")
+}
+// print "z"
+```
+
+具有多個相同狀態的條件
+
+```swift
+let c = "Z"
+switch c {
+  case "a":
+    print("a")
+  case "z", "Z":
+    print("z")
+  default:
+    print("unknown")
+}
+// print "z"
+```
+
+區間匹配
+
+```swift
+let i = 52
+switch i {
+  case 0:
+    print("0")
+  case 1..<25:
+    print("1~25, not include 25")
+  case 25..<50:
+    print("25~50, not include 50")
+  case 50..<100:
+    print("50~100, not include 100")
+  default:
+    print("not in the range of number")
+}
+// print "50~100, not include 100"
+```
+
+元組(Tuple)條件式
+
+```swift
+let point = (1, 1)
+switch point {
+  case (0, 0):
+    print("\(point) is at the origin")
+  case (_, 0):
+    print("\(point) is on the x-axis")
+  case (0, _):
+    print("\(point) is on the y-axis")
+  case (-2...2, -2...2):
+    print("\(point) is inside the box")
+  default:
+    print("outside!")
+}
+```
+
+若有使用條件式的數值需求，可使用`數值綁定`功能實現
+
+```swift
+let point = (2, 0)
+switch point {
+  case (let x, 0):
+  case (0, let y):
+  case let (x, y):
+}
+```
+
+在使用`數值綁定`後可再利用`where`進行條件判斷
+
+```swift
+let point = (1, -1)
+switch point {
+  case let (x, y) where x == y:
+    print("(\(x), \(y)) is on the line x == y")
+  case let (x, y) where x == -y:
+    print("(\(x), \(y)) is on the line x == -y")
+  case let (x, y):
+    print("(\(x), \(y)) is just some arbitrary point")
+}
+```
+
+如需讓下一個`case`執行，只需要在執行區塊中最後加入`fallthrough`關鍵字
+
+```swift
+let i = 5
+switch i {
+  case 5:
+    print("it is 5")
+    fallthrough
+  default:
+    print(" and it is end")
+}
+// print "it is 5 and it is end"
+```
+
+### 標簽陳述
+
+標簽陳述(Labeled Statements)可嵌套在`條件判斷式`或是`迴圈`中
+
+```Swift
+myLabel: if true {
+    for _ in 1...1000 {
+        for _ in 1...1000 {
+            print("hello")
+            break myLabel
+        }
+    }
+}
+
+if true {
+    myLabel: for _ in 1...1000 {
+        for _ in 1...1000 {
+            print("hello")
+            break myLabel
+        }
+    }
+}
+
+myLabel: while true {
+    print("hello")
+    break myLabel
+}
+
+// 上述三個標簽陳述句結果都僅列印一次"hello"
+```
+
+### Guard
+
+簡單說，`Guard`就是一種反向的`if`，也就是`條件不成立則執行程式區塊`，只是與`if`的差別在於永遠會有`else`區塊
+以及`guard let`後的常數可以在後續使用，但`if let`後的常數僅能使用在執行區塊內
+
+```swift
+func greet(person: [String: String]) {
+  guard let name = person["name" ] else {
+    return
+  }
+
+  print("Hello \(name)")
+
+  guard let location = person["location"] else {
+    print("I hope the weather is nice near you.")
+    return
+  }
+  print ("I hope the weather is nice in \(location).")
+}
+
+// multiple guard
+
+guard let a = a1, let b = b1, let, c = c1 else {
+  return
+}
+```
+
+### API 可用性檢查
+
+使用者不可能全部都是使用一樣的作業系統版本，但為了能使一套程式碼通用，API 的可用性檢查就重要多了
+
+```swift
+if #available(iOS 10, macOS 10.22, *) {
+  // Use iOS 10 APIs on iOS, and use macOS 10.12 APIs on macOS
+} else {
+  // Do something
+}
+```
+
+## 函數
+
+可傳回多個值
+
+```swift
+func myFunc() -> (Int, Int) {
+  return (1, 2)
+}
+```
+
+若回傳的數值可能為`nil`，必需在回傳敘述最後加上`選擇性(optional, ?)`關鍵字
+
+```swift
+func myFunc() -> (Int, Int)? {
+  return (nil, nil)
+}
+```
+
+可以定義`參數標簽(Argument Labels)`及`參數名稱(Parameter Names)`，如果沒有定義標簽，
+預設會與名稱相同。
+
+```swift
+func myFunc(param: String) {
+  print(param)
+}
+
+myFunc(param: "Hi")
+```
+
+```swift
+func myFunc(argumentLabel parameterName: String) {
+  print(parameterName)
+}
+
+myFunc(argumentLabel: "Hi")
+```
+
+宣告時可以忽略`參數標簽`，呼叫時會很方便，但個人覺得會失去可讀性
+
+```swift
+func myFunc(_ paramName: String) {
+  print(paramName)
+}
+
+myFunc("Hi")
+```
+
+可賦予參數初始值，`但僅能放在一般參數之後`
+
+```swift
+func myFunc(_ paramWithoutDefault: Int, _ paramWithDefault: Int = 10) {
+  print(paramWithoutDefault, paramWithDefault)
+}
+
+myFunc(1, 3)  // Prints "1, 3"
+myFunc(1)     // Prints "1, 10"
+```
+
+可使用不定長度參數
+
+```swift
+func myFunc(_ numbers: Int...) -> Int {
+  var sum = 0
+  for i in numbers {
+    sum += i
+  }
+  return sum
+}
+
+myFunc(1, 2, 3) // Prints 7
+```
+
+參數預設為`常數`，若對其做改變會造成`compile-error`，如果改變參數本身的值需要在`型別`前加上
+`inout`關鍵字，並且在呼叫函式時在傳入的變數前面加上`取值運算子(&)`
+
+```swift
+func myFunc(_ a: inout Int) {
+  a += 10
+}
+
+var a = 10
+
+myFunc(&i)
+
+print(a)  // 20
+```
+
+## 閉包
+
+## 列舉
+
+## 結構與類別
+
+## 屬性
+
+## 方法
+
+## 下標
+
+## 繼承
+
+## 建構式
+
+## 解構式
+
+## 可選鏈
+
+## 錯誤處理
+
+## 型別檢查
+
+## 巢狀型別
+
+## 擴展
+
+## 協定
+
+## 泛型
+
+```
+
+```
