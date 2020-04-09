@@ -16,7 +16,7 @@
   date_format = "2006年1月2日"
 #    description = "Site description in Chinese..."
 [[zh-hant.menu.main]]
-  name = "關於我"
+  name = "關於"
   url = "#about"
   weight = 10
 
