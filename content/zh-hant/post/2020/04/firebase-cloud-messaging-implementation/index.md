@@ -64,7 +64,7 @@ FCM Notification Composer 沒有提供傳送`Data`的方法，需要使用 Call 
 
 基本設定的部份，官方文件已經詳解了，在此就不加以說明了。
 
-## 設定 Flutter FCM Library - [firebase_messaging][link_flutter_firebase_messaging]
+## 設定 Flutter FCM Library - [firebase_messaging][link_flutter_firebase_messaging] {#fcm_impl}
 
 flutter pub 上的文件也已經詳解如何整合至 Android 或 iOS 了，基本上照做都能順利整合。
 需要注意的是，如果希望 Client 在點擊訊息時能觸發`onResume`、`oLaunch`的 Handler ，
@@ -83,7 +83,6 @@ flutter pub 上的文件也已經詳解如何整合至 Android 或 iOS 了，基
 讓我使用 [Postman](https://www.postman.com/) 來測試`Notification`與`Data`這兩種傳送方式。
 
 打的 Payload 如下
-
 Notification:
 
 ```json
@@ -176,7 +175,7 @@ Data:
 
 在實作`onBackgroundMessage`的時候，`Application.java`如果是參考 pub 裡的實作會發生錯誤
 ![registerWith error](error_on_registerWith_function.png)，
-參考[這篇][link_error_on_registerwith]後，實作新的 Class 並取代舊的即可解決
+參考[此文][link_error_on_registerwith]並實作新的 Class 取代舊的即可解決此問題
 
 ### 接收的到訊息但無法顯示彈跳視窗
 
@@ -208,6 +207,19 @@ Data:
 FCM 提供了我目前所有的需求了，重點是它是**免費的**。
 ![fcm_free](fcm_free.png)
 
+## 補充
+
+### 20200410
+
+在前面利用 Postman [測試的章節](#fcm_impl) 中，我們只對單一裝置進行測試，
+但如果我們希望所有的裝置都能收到呢?
+這裡就會必需 Client 端先做`訂閱(Subscribe)`的動作。
+在 Flutter 裡僅需加一行程式碼即可，詳見[此文][link_fcm_send_all]
+
+```flutter
+firebaseMessaging.subscribeToTopic("all");
+```
+
 <!-- external links -->
 
 [link_firebase_site]: https://firebase.google.com/
@@ -218,6 +230,7 @@ FCM 提供了我目前所有的需求了，重點是它是**免費的**。
 [link_flutter_fcm_doc]: https://pub.dev/documentation/firebase_messaging/latest/
 [link_error_on_registerwith]: https://stackoverflow.com/questions/59446933/pluginregistry-cannot-be-converted-to-flutterengine
 [link_notification_channel]: https://developer.android.com/training/notify-user/channels
+[link_fcm_send_all]: https://stackoverflow.com/questions/38237559/how-do-you-send-a-firebase-notification-to-all-devices-via-curl
 
 <!-- some decent posts -->
 
