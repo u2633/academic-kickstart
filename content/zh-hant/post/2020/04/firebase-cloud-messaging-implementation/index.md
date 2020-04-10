@@ -47,6 +47,7 @@ Firebase Cloud Messaging(FCM), 是 [Firebase][link_firebase_site] 提供的服�
 - 從客戶端(`Client`)發送訊息(`雙向`)
 
 其基礎結構為
+
 ![fcm_arch](fcm_architecture.png)
 
 ### Message Type
@@ -78,11 +79,13 @@ flutter pub 上的文件也已經詳解如何整合至 Android 或 iOS 了，基
 ```
 
 先來看一下各個 Handler 在`Notification`及`Data` 的 Spec
+
 ![fcm_handler](./fcm_handler_spec.png)
 
-讓我使用 [Postman](https://www.postman.com/) 來測試`Notification`與`Data`這兩種傳送方式。
+讓我們使用 [Postman](https://www.postman.com/) 來測試`Notification`與`Data`這兩種傳送方式。
 
-打的 Payload 如下
+Payload 如下
+
 Notification:
 
 ```json
@@ -115,13 +118,13 @@ Data:
 }
 ```
 
-讓我們觀察 `Foreground`, `Background` 及 `Terminated` 的行為吧
+觀察 `Foreground`, `Background` 及 `Terminated` 的行為
 
 - Foreground:
 
   - Notification
 
-    觸發的 Handler - onMessage
+    觸發 Handler - onMessage
 
     ```text
     I/flutter (28543): on Message: {notification: {title: this is a title, body: this is a body}, data: {status: done, id: high, click_action: FLUTTER_NOTIFICATION_CLICK}}
@@ -129,19 +132,20 @@ Data:
 
   - Data
 
-    觸發的 Handler - onMessage
+    觸發 Handler - onMessage
 
     ```text
     I/flutter (28543): on Message: {notification: {title: null, body: null}, data: {status: done, id: high, click_action: FLUTTER_NOTIFICATION_CLICK}}
     ```
 
-    與文件的描述相符。
+    與文件相符。
 
 - Background:
 
   - Notification
 
     出現訊息提示窗
+
     ![fcm_notification_background](notification_background.png)
 
     在點擊後回復 APP 至前景並觸發 Handler - onResume
@@ -152,10 +156,11 @@ Data:
 
   - Data
 
-    結果，發生錯誤了!!!找不到相對應的 Callback function
+    發生錯誤了!找不到相對應的 Callback function
+
     ![data_background_error](data_background_fatal_error.png)
 
-    但在參考[pub 文件][link_flutter_fcm_doc] 並實作`onBackgroundMessage`這個 Handler 後就可以接到資料
+    參考[pub 文件][link_flutter_fcm_doc] 並實作`onBackgroundMessage`這個 Handler 後就可以接到資料
 
     ```text
     I/flutter (31277): on Background data: {status: done, id: high, click_action: FLUTTER_NOTIFICATION_CLICK}
@@ -171,13 +176,15 @@ Data:
 
 ## Troubleshooting
 
-### Error - "PluginRegistry cannot be converted to FlutterEngine"
+### "PluginRegistry cannot be converted to FlutterEngine" 錯誤
 
 在實作`onBackgroundMessage`的時候，`Application.java`如果是參考 pub 裡的實作會發生錯誤
-![registerWith error](error_on_registerWith_function.png)，
+
+![registerWith error](error_on_registerWith_function.png)
+
 參考[此文][link_error_on_registerwith]並實作新的 Class 取代舊的即可解決此問題
 
-### 接收的到訊息但無法顯示彈跳視窗
+### 接收的到訊息但沒有顯示提示視窗
 
 這問題在下列兩種使用方式都有出現
 
@@ -200,11 +207,13 @@ Data:
    _`***測試後發現，如果希望在 Call API 的方式下能正常顯示提示窗，這個 meta 必需存在***`_
 
 2. 在`Application.java`裡面實作`Notification Channel`
+
    ![notification_implementation](./notification_implementation.png)
 
 ## 結論
 
 FCM 提供了我目前所有的需求了，重點是它是**免費的**。
+
 ![fcm_free](fcm_free.png)
 
 ## 補充
@@ -218,6 +227,24 @@ FCM 提供了我目前所有的需求了，重點是它是**免費的**。
 
 ```flutter
 firebaseMessaging.subscribeToTopic("all");
+```
+
+在 Request 的時候`to`的值取代成
+
+```json
+{
+  "notification": {
+    "body": "this is a body",
+    "title": "this is a title"
+  },
+  "priority": "high",
+  "data": {
+    "click_action": "FLUTTER_NOTIFICATION_CLICK",
+    "id": "high",
+    "status": "done"
+  },
+  "to": "/topics/all"
+}
 ```
 
 <!-- external links -->
