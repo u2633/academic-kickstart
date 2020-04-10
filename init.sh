@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+
+## DO NOT run this file outside root folder
 # init theme
 git submodule update --init --recursive
 
