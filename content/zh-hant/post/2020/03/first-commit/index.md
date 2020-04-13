@@ -3,7 +3,7 @@
 
 title: "First Commit"
 subtitle: ""
-summary: "人總有第一次的嘛"
+summary: "First Commit"
 authors: [Zane]
 tags: []
 categories: []

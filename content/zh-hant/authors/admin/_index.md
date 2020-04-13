@@ -10,7 +10,7 @@ authors:
 superuser: true
 
 # Role/position
-role: 前端/App工程師
+role: 前端/Flutter 工程師
 
 # Organizations/Affiliations
 organizations:
@@ -18,7 +18,7 @@ organizations:
     url: ""
 
 # Short bio (displayed in user profile at end of posts)
-bio: I like new technology.
+bio: Age is nothing but a number.
 
 interests:
   - 健身

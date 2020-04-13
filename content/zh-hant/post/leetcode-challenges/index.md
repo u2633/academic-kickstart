@@ -3,7 +3,7 @@
 
 title: "我的 Leetcode 挑戰"
 subtitle: ""
-summary: "我在 Leetcode 上刷題的解答"
+summary: "Leetcode 刷題解答"
 authors: [zane]
 tags: [algorithm]
 categories: [python]

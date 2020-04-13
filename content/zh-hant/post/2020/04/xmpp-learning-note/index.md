@@ -4,9 +4,9 @@
 title: "Extensible Messaging and Presence Protocol (XMPP)"
 subtitle: ""
 summary: "XMPP 的學習筆記"
-authors: []
-tags: []
-categories: []
+authors: [zane]
+tags: [Protocol]
+categories: [Network]
 date: 2020-04-09T14:34:42+08:00
 lastmod: 2020-04-09T14:34:42+08:00
 featured: false
@@ -27,3 +27,7 @@ image:
 #   Otherwise, set `projects = []`.
 projects: []
 ---
+
+## 前言
+
+## 結論
