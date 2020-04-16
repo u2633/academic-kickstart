@@ -70,8 +70,8 @@ class Counter {
 }
 ```
 
-程式碼有點失去可讀性，如果在大型一點專案中會更容易被看出。
-但在透過 MobX 的幫助下，我們只需要使用`Annotation`的方式就能簡化其程式碼。
+程式碼有點不易越讀性，如果在大型一點專案中會更容易有這種問題。
+但是，在透過 MobX 的幫助下，我們只需要使用`Annotation`的方式就能簡化其程式碼。
 實作中，我們會建立一個`Store(Entity的概念)`來存放`Observable`、`Action`、`Computed Observable`的資料，
 並利用第三方插件 - [mobx_codegen](https://pub.dev/packages/mobx_codegen) 來幫我們產出`Annotation`裡的樣版程式碼
 
@@ -96,7 +96,7 @@ abstract class CounterBase with Store {
 ### Computed Observables
 
 MobX 中的狀態組成為`核心狀態(Core-State)` + `衍生狀態(Derived-State)`。
-假設我們有個叫`Contact`的Store，如下:
+假設我們有個叫`Contact`的 Store，如下:
 
 ```dart
 import 'package:mobx/mobx.dart';
@@ -125,19 +125,155 @@ abstract class ContactBase with Store {
 
 ## Actions
 
-`Action`就是在Store中對`Observable`操作的`函數`。不同於直接對`Observable`操作，
+`Action`就是在 Store 中對`Observable`操作的`函數`。不同於直接對`Observable`操作，
 藉由`Annotation`可以讓程式碼更具可讀性。此外，`Action`還會保證所有的改變都會在完成後被確實通知。
 
 ## Reactions
 
-在 MobX 中，它代表`Observer`，監聽追蹤的`Observable`。`Reaction`有幾個不一樣的形態，但都會傳回一個``:
+在 MobX 中，它代表`Observer`，監聽追蹤的`Observable`並在有改變的時候通知`Observer Widget`。
+`Reaction`有四個不一樣的形態:
 
 - `ReactionDisposer autorun(Function(Reaction) fn)`
+
+  `autorun`會在被建立後立刻做出反應並且在任何改變的時候做出反應
+
+  ```dart
+  import 'package:mobx/mobx.dart';
+
+  String greeting = Observable('Hello World');
+
+  final dispose = autorun((_){
+    print(greeting.value);
+  });
+
+  greeting.value = 'Hello MobX';
+
+  // Done with the autorun()
+  dispose();
+
+  // Prints:
+  // Hello World
+  // Hello MobX
+  ```
+
 - `ReactionDisposer reaction<T>(T Function(Reaction) fn, void Function(T) effect)`
+
+  `reaction`僅會在有改變的時候才會做出反應
+
+  ```dart
+  import 'package:mobx/mobx.dart';
+
+  String greeting = Observable('Hello World');
+
+  final dispose = reaction((_) => greeting.value, (msg) => print(msg));
+
+  greeting.value = 'Hello MobX'; // Cause a change
+
+  // Done with the reaction()
+  dispose();
+
+  // Prints:
+  // Hello MobX
+  ```
+
 - `ReactionDisposer when(bool Function(Reaction) predicate, void Function() effect)`
+
+  `when`僅會在條件成立的時候做出反應，而且`僅會觸發一次`。
+
+  ```dart
+  import 'package:mobx/mobx.dart';
+
+  String greeting = Observable('Hello World');
+
+  final dispose = when((_) => greeting.value == 'Hello MobX', () => print('Someone greeted MobX'));
+
+  greeting.value = 'Hello MobX'; // Causes a change, runs effect and disposes
+
+  // Prints:
+  // Someone greeted MobX
+  ```
+
 - `Future<void> asyncWhen(bool Function(Reaction) predicate)`
+
+  `asyncWhen`與`when`雷同，只是它回傳的是一個`Future`。
+
+  ```dart
+  final completed = Observable(false);
+
+  void waitForCompletion() async {
+    await asyncWhen(() => completed.value == true);
+
+    print('Completed');
+  }
+  ```
+
+除了`asyncWhen`是傳回一個`Future`之外，其他三個都會傳回一個`ReactionDisposer`。
+`ReactionDisposer`一個可以被調用以處理`Reaction`的函數。
 
 ## Observer Widget
 
+`Observer Widget`的功用是監聽其 Widget 內`Observable`的改變，
+並且在接收`Reaction`發出的通知後進行畫面更新。
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:mobx/mobx.dart';
+
+part 'counter.g.dart';
+
+class Counter = CounterBase with _$Counter;
+
+abstract class CounterBase with Store {
+  @observable
+  int value = 0;
+
+  @action
+  void increment() {
+    value++;
+  }
+}
+
+class CounterExample extends StatefulWidget {
+  const CounterExample({Key key}) : super(key: key);
+
+  @override
+  _CounterExampleState createState() => _CounterExampleState();
+}
+
+class _CounterExampleState extends State<CounterExample> {
+  final _counter = Counter();
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          title: const Text('Counter'),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const Text(
+                'You have pushed the button this many times:',
+              ),
+              Observer(
+                builder: (_) => Text(
+                    '${_counter.value}',
+                    style: const TextStyle(fontSize: 20),
+                  ),
+                ),
+            ],
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: _counter.increment,
+          tooltip: 'Increment',
+          child: const Icon(Icons.add),
+        ),
+      );
+}
+```
+
+## 深入 Mobx
 
 ## 總結
