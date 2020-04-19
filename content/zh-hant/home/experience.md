@@ -18,6 +18,18 @@ date_format = "2006年 1月"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
+  title = "Sr. Programmer"
+  company = "未來市股份有限公司"
+  company_url = "https://www.xrspace.io"
+  location = "台灣"
+  date_start = "2020-04-06"
+  date_end = ""
+  description = """
+  職責:
+
+  * 使用 Flutter 開發及維護手機 APP
+  """
+[[experience]]
   title = "資深軟體工程師"
   company = "永悅健康股份有限公司"
   company_url = "https://h2uclub.com/"
