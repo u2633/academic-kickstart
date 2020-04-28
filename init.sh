@@ -6,4 +6,4 @@ git submodule update --init --recursive
 
 # init public folder
 
-git submodule add -f -b master https://github.com/u2633/u2633.github.io.git public
+git submodule add -f -b master git@github.com:u2633/u2633.github.io.git public
