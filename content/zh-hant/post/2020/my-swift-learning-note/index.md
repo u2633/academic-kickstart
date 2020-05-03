@@ -10,7 +10,7 @@ categories: [swift]
 date: 2020-03-15T17:00:26+08:00
 lastmod: 2020-03-15T17:00:26+08:00
 featured: false
-draft: false
+draft: true
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
@@ -1243,6 +1243,8 @@ stepCounter.totalSteps = 896
 ```
 
 ## 方法
+
+方法可在`類別(Class)`、`結構(Structure)`、`型別(Type)`及`列舉(Enumeration)`中被宣告
 
 ## 下標
 
