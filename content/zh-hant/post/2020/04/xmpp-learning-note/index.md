@@ -4,9 +4,9 @@
 title: "Extensible Messaging and Presence Protocol (XMPP)"
 subtitle: ""
 summary: "XMPP 的學習筆記"
-authors: [zane]
-tags: [protocol]
-categories: [network]
+authors: [Zane]
+tags: [XMPP]
+categories: [Programming]
 date: 2020-04-09T14:34:42+08:00
 lastmod: 2020-04-09T14:34:42+08:00
 featured: false

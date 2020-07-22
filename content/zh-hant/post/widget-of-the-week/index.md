@@ -4,9 +4,9 @@
 title: "Widget of the Week - Align"
 subtitle: ""
 summary: "每週練習一個 Flutter Widget"
-authors: [zane]
-tags: [widget of week]
-categories: [flutter]
+authors: [Zane]
+tags: [Flutter]
+categories: [Programming]
 date: 2020-04-10T11:43:04+08:00
 lastmod: 2020-04-10T11:43:04+08:00
 featured: false

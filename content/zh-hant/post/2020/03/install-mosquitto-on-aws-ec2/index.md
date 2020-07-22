@@ -4,9 +4,9 @@
 title: "在 AWS EC2 上安裝 Mosquitto(MQTT) Client 套件"
 subtitle: ""
 summary: "紀錄 MQTT 在 EC2 上的安裝步驟"
-authors: [zane]
-tags: [aws, mqtt]
-categories: [cloud]
+authors: [Zane]
+tags: [AWS, MQTT]
+categories: [Cloud]
 date: 2020-03-12T21:45:17+08:00
 lastmod: 2020-03-12T21:45:17+08:00
 featured: false

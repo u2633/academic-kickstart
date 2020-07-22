@@ -4,9 +4,9 @@
 title: "為你的 Github Page 設定個人網域名稱"
 subtitle: ""
 summary: "利用 Godaddy 與 Cloudflare 為自己的 Github Page 設定個人域名"
-authors: [zane]
-tags: [domain name]
-categories: [cloud]
+authors: [Zane]
+tags: [Domain]
+categories: [Cloud]
 date: 2020-03-16T11:21:20+08:00
 lastmod: 2020-03-16T11:21:20+08:00
 featured: false

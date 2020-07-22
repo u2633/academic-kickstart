@@ -4,7 +4,7 @@
 title: "Playground"
 subtitle: ""
 summary: ""
-authors: [zane]
+authors: [Zane]
 tags: []
 categories: []
 date: 2020-02-02T22:56:17+08:00

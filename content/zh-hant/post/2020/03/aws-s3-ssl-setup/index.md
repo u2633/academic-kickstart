@@ -4,9 +4,9 @@
 title: "讓你的 AWS S3 擁有自己的網域名稱還具有免費網路憑證"
 subtitle: ""
 summary: "利用 AWS 服務打造 HTTPS 協定的靜態網站"
-authors: [zane]
-tags: [aws]
-categories: [cloud]
+authors: [Zane]
+tags: [AWS]
+categories: [Cloud]
 date: 2020-03-11T13:49:56+08:00
 lastmod: 2020-03-11T13:49:56+08:00
 featured: false

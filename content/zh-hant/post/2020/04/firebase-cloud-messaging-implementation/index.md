@@ -4,9 +4,9 @@
 title: "Firebase Cloud Messaging - Android"
 subtitle: ""
 summary: "在 Android 上實作 FCM"
-authors: [zane]
-tags: [firebase]
-categories: [cloud]
+authors: [Zane]
+tags: [Flutter, Android, Firebase]
+categories: [Cloud]
 date: 2020-04-09T09:41:26+08:00
 lastmod: 2020-04-09T09:41:26+08:00
 featured: false

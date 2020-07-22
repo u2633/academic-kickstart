@@ -4,9 +4,9 @@
 title: "狀態管理工具 - MobX"
 subtitle: ""
 summary: "學習 MobX 並且在 Flutter 專案中實作"
-authors: [zane]
-tags: [state management]
-categories: [flutter]
+authors: [Zane]
+tags: [Flutter, MobX]
+categories: [Programming]
 date: 2020-04-14T13:56:46+08:00
 lastmod: 2020-04-14T13:56:46+08:00
 featured: false

@@ -4,9 +4,9 @@
 title: "Flutter SDK 1.12.13 Proguard 功能預設已變更為開啟狀態"
 subtitle: ""
 summary: "解決更新 Flutter SDK 後程式碼混淆造成的錯誤"
-authors: [zane]
-tags: [flutter]
-categories: [mobile app]
+authors: [Zane]
+tags: [Flutter]
+categories: [Programming]
 date: 2020-04-28T19:40:57+08:00
 lastmod: 2020-04-28T19:40:57+08:00
 featured: false

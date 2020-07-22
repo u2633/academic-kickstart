@@ -4,9 +4,9 @@
 title: "Disable Obfuscation on Android Release"
 subtitle: ""
 summary: ""
-authors: []
-tags: []
-categories: []
+authors: [Zane]
+tags: [Flutter]
+categories: [Programming]
 date: 2020-05-05T13:35:35+08:00
 lastmod: 2020-05-05T13:35:35+08:00
 featured: false

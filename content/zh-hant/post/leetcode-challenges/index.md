@@ -4,7 +4,7 @@
 title: "我的 Leetcode 挑戰"
 subtitle: ""
 summary: "Leetcode 刷題解答"
-authors: [zane]
+authors: [Zane]
 tags: [algorithm]
 categories: [python]
 date: 2020-03-10T17:20:29+08:00

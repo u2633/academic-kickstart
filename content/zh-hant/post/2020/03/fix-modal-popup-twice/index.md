@@ -4,9 +4,9 @@
 title: "解決Flutter Bottom Modal彈跳兩次的問題"
 subtitle: ""
 summary: "紀錄我是如何解決 Flutter Bottom Modal的問題"
-authors: [zane]
-tags: [bug fix]
-categories: [flutter]
+authors: [Zane]
+tags: [Flutter]
+categories: [Programming]
 date: 2020-03-12T19:58:18+08:00
 lastmod: 2020-03-12T19:58:18+08:00
 featured: false

@@ -4,9 +4,9 @@
 title: "Unity Export vs iOS Build Configuration"
 subtitle: ""
 summary: "在 Unity Export 時客制化 iOS 設定檔"
-authors: [zane]
-tags: [unity export]
-categories: [flutter]
+authors: [Zane]
+tags: [Flutter, Unity]
+categories: [Programming]
 date: 2020-04-30T10:02:21+08:00
 lastmod: 2020-04-30T10:02:21+08:00
 featured: false
