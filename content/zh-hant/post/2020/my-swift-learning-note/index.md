@@ -1,12 +1,12 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "我的 Swift 學習之旅"
+title: "Swift 學習之旅"
 subtitle: ""
 summary: "Swift 語法重點紀錄"
 authors: [Zane]
-tags: [syntax]
-categories: [swift]
+tags: [Swift]
+categories: [Programming]
 date: 2020-03-15T17:00:26+08:00
 lastmod: 2020-03-15T17:00:26+08:00
 featured: false
