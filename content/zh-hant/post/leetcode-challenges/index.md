@@ -5,8 +5,8 @@ title: "我的 Leetcode 挑戰"
 subtitle: ""
 summary: "Leetcode 刷題解答"
 authors: [Zane]
-tags: [algorithm]
-categories: [python]
+tags: [Leetcode]
+categories: [Programming]
 date: 2020-03-10T17:20:29+08:00
 lastmod: 2020-03-10T17:20:29+08:00
 featured: false

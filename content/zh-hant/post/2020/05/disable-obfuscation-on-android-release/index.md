@@ -1,9 +1,9 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "Disable Obfuscation on Android Release"
+title: "關閉 Obfuscation on Android Release"
 subtitle: ""
-summary: ""
+summary: "如何關閉 Android 程式碼混淆"
 authors: [Zane]
 tags: [Flutter]
 categories: [Programming]
