@@ -10,7 +10,7 @@ categories: [DevOps]
 date: 2020-09-07T21:29:59+08:00
 lastmod: 2020-09-07T21:29:59+08:00
 featured: false
-draft: true
+draft: false
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
