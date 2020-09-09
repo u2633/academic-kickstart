@@ -5,7 +5,7 @@ title: "How to Run Jenkins Service on Docker"
 subtitle: ""
 summary: "如何在 Docker 上運行 Jenkins"
 authors: [Zane]
-tags: [Docker]
+tags: [Jenkins,Docker]
 categories: [DevOps]
 date: 2020-09-08T13:56:55+08:00
 lastmod: 2020-09-08T13:56:55+08:00
