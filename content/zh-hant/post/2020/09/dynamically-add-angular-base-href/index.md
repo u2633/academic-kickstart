@@ -60,8 +60,6 @@ projects: []
 
 ### 利用 [Angular CLI](https://cli.angular.io/) 的指令來完成設
 
-我認為這是第二簡單的方法。雖然這是以比較低階的 Build Tool 來完成，但也是解決這個問題的次好方法。
-
 Angular 專案裡面都有個 `package.json`。通常工程師們都會把 Build Command 寫在 scripts 欄位裡面。
 
 ```json
@@ -86,7 +84,7 @@ Angular 專案裡面都有個 `package.json`。通常工程師們都會把 Build
 
 ### 利用程式碼進行動態配置
 
-這我認為是屬於較正規的 Angular 做法，利用框架本身提供的屬性及方法來解決這個問題。
+這個方式只能讓專案在 Routing 的時候不用再加上 Base Href，可參考[官方文](https://angular.io/api/common/PathLocationStrategy#description)，但其實是無法解決讀取網路資源找不到的問題。
 
 這邊利用了 [Angular Provider](https://angular.io/guide/dependency-injection-providers) 來對 [APP_BASE_HREF](https://angular.io/api/common/APP_BASE_HREF#app_base_href)屬性進行設定。
 
@@ -120,7 +118,7 @@ class AppModule {}
 
 ## 總結
 
-以上就是針對這個問題的解法，就我看來不論是低階或是高階的處理方式都是好方法，只要是不會造成開發人員的困擾就好囉。
+想要解決網路資源無法正常讀取的問題，只能在`ng build`的時候利用 Build Tools 來幫我們把 Base Href 寫入`index.html`裡面。
 
 ## 參考資料
 
