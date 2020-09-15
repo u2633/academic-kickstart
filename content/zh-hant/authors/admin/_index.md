@@ -10,7 +10,7 @@ authors:
 superuser: true
 
 # Role/position
-role: 前端/Flutter 工程師
+role: DevOps/前端/Flutter 工程師
 
 # Organizations/Affiliations
 organizations:
