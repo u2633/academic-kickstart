@@ -36,17 +36,23 @@ subtitle = ""
   icon = "jenkins"
   icon_pack = "fab"
   name = "Jenkins"
-  description = "90%"
+  description = "80%"
 
 [[feature]]
   icon = "aws"
   icon_pack = "fab"
   name = "AWS"
-  description = ""
+  description = "EC2/RDS/S3\n\nCloudfront/Route53"
   
 [[feature]]
   icon = "docker"
   icon_pack = "fab"
   name = "Docker"
   description = "60%"
+
+[[feature]]
+  icon = "python"
+  icon_pack = "fab"
+  name = "Python"
+  description = "80%"
 +++
