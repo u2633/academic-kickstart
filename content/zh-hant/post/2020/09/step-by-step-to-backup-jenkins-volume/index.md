@@ -30,6 +30,20 @@ projects: []
 
 ## 前言
 
+最近筆者想要將工作環境裡的 Jenkins 容器化，令 Jenkins 的可攜性可以更高一點，這裡我們就需要使用到 Docker 的備份技巧了。
+
+在參考了網路上一些資料並且實作之後，也成功的將自己的 Jenkins 環境做了備份並且還原在新的 Container 上，過程不算太複雜，
+但觀念很重要，就來看看我怎麼做的吧!
+
+## 建立備份檔
+
+## 透過備份檔還原系統
+
 ## 總結
 
 ## 參考資料
+
+<https://docs.docker.com/storage/volumes/>
+<https://dotblogs.com.tw/artBlog/2018/10/02/how-to-backup-restore-docker-volume>
+<https://medium.com/@loomchild/backup-restore-docker-named-volumes-350397b8e362>
+<https://blog.ssdnodes.com/blog/docker-backup-volumes/>
