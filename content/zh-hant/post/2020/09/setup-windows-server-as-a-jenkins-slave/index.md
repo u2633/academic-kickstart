@@ -3,7 +3,7 @@
 
 title: "Setup Windows Server as a Jenkins Slave and Build .Net Project"
 subtitle: ""
-summary: "紀錄如何建立一個 Windows Slave 並且在系統上建置 Visual Studio 的專案"
+summary: "如何建立一個 Windows Slave 並且在系統上建置 Visual Studio 的專案"
 authors: [Zane]
 tags: [Jenkins, Visual Studio]
 categories: [DevOps]

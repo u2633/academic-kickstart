@@ -3,7 +3,7 @@
 
 title: "Restore Deleted Nginx Config From Running Process"
 subtitle: ""
-summary: "從運行中 Nginx 行程中回復被刪除的設定檔"
+summary: "從運行中的 Nginx 行程回復被刪除的設定檔"
 authors: [Zane]
 tags: [Nginx]
 categories: [DevOps]

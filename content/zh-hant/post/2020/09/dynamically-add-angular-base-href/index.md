@@ -3,7 +3,7 @@
 
 title: "Dynamically Add Angular Base Href"
 subtitle: ""
-summary: "如何動態設定 Angular Base Href"
+summary: "動態設定 Angular Base Href"
 authors: [Zane]
 tags: [Angular]
 categories: [Programming]

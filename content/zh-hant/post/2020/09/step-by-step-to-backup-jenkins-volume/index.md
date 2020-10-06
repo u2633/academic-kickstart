@@ -3,7 +3,7 @@
 
 title: "Step by Step to Backup Jenkins Volume"
 subtitle: ""
-summary: "如何建立 Jenkins 的備份並且利用此備份建立新的 Container"
+summary: "建立 Jenkins 的備份並且利用此備份建立新的 Container"
 authors: [Zane]
 tags: [Docker]
 categories: [DevOps]
