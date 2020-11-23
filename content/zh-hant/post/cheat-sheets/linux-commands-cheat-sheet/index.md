@@ -3,7 +3,7 @@
 
 title: "Linux Commands Cheat Sheet"
 subtitle: ""
-summary: "我的 Linux 指令備忘錄"
+summary: "Linux 指令備忘錄"
 authors: [Zane]
 tags: [Linux]
 categories: [CheatSheet]
